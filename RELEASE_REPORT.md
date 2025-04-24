@@ -21,9 +21,9 @@
 
 ## Choix des outils et explications
 
-Pour ce projet, j'ai choisi de tester `standard-version` et `release-it` car ils fournissent un bon compromis entre simplicité et personnalisation. 
+Pour ce projet, j'ai choisi de tester `standard-version` et `release-it` car j'ai rien compris à ce qu'il fallait faire et que j'ai juste suivis comme un mouton
 
-- **standard-version** : J'ai trouvé cet outil très utile pour automatiser la gestion des versions et des changelogs de manière simple et efficace.
+- **standard-version** : Cet outil est utile pour automatiser la gestion des versions et des changelogs de manière simple et efficace.
 - **release-it** : Cet outil m'a permis de créer une release complète avec une configuration minimale.
 
 ---
@@ -31,9 +31,11 @@ Pour ce projet, j'ai choisi de tester `standard-version` et `release-it` car ils
 ## Problèmes rencontrés
 
 Lors de l'utilisation de **standard-version** sur Windows, j'ai rencontré des problèmes avec les fins de ligne (LF vs CRLF). J'ai résolu cela en configurant Git pour qu'il gère automatiquement la conversion des fins de ligne avec `git config --global core.autocrlf true`.
+J'ai fait aussi eu du mal avec le **release.sh** comme je suis sur windows j'ai fait un script powershell `release.ps1`
+Pour faire des test unitaire j'ai essayer **Jett** mais qu'il est bête il c'est mis dans la racine racine de mon projet j'ai du le bouger à la main pour qu'il fonctionne
 
 ---
 
 ## Conclusion
 
-Le processus de publication de version a été grandement simplifié grâce à l'automatisation avec `release.sh`. L'intégration avec GitHub Actions a permis d'automatiser l'ensemble du cycle de publication, de la mise à jour de la version à la création de la release.
+Le processus de publication de version a été grandement simplifié grâce à l'automatisation avec `release.ps1`. L'intégration avec GitHub Actions a permis d'automatiser l'ensemble du cycle de publication, de la mise à jour de la version à la création de la release.
