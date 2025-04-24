@@ -1,33 +1,29 @@
 name: Release
 
 on:
-  workflow_dispatch:
   push:
-    branches: [release/*]
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   release:
     runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
-          dotnet-version: '9.0.4'
+          node-version: '16'
 
-      - name: Restore dependencies
-        run: dotnet restore
-
-      - name: Build app
-        run: dotnet build --configuration Release
-
-      - name: Run unit tests
-        run: dotnet test
+      - name: Install dependencies
+        run: npm install
 
       - name: Run release script
-        run: ./release.sh release-it
-        shell: bash
+        run: powershell -ExecutionPolicy Bypass -File .\release.ps1 standard-version
+        shell: pwsh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
