@@ -1,0 +1,23 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Liste des Boissons</h1>
+    <div>
+        @foreach (var boisson in Model.Boissons)
+        {
+            <div class="boisson-card">
+                <h3>@boisson.Nom</h3>
+                <p>@boisson.Prix €</p>
+                <form method="post" asp-page-handler="AddToTotal">
+                    <input type="hidden" name="id" value="@boisson.Id" />
+                    <button type="submit" class="btn btn-primary">Ajouter</button>
+                </form>
+            </div>
+        }
+    </div>
+    <h1 class="display-4">Total : @Model.Total €</h1>
+</div>
