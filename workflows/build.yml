@@ -10,6 +10,9 @@ jobs:
   build:
     runs-on: windows-latest
 
+ env:
+    DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
