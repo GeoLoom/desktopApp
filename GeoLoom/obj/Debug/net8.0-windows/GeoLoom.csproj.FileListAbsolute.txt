@@ -1,0 +1,7 @@
+C:\Users\Pidoux\source\repos\GeoLoom\GeoLoom\obj\Debug\net8.0-windows\GeoLoom.csproj.AssemblyReference.cache
+C:\Users\Pidoux\source\repos\GeoLoom\GeoLoom\obj\Debug\net8.0-windows\Views\PageArticle.baml
+C:\Users\Pidoux\source\repos\GeoLoom\GeoLoom\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\Pidoux\source\repos\GeoLoom\GeoLoom\obj\Debug\net8.0-windows\Views\PageArticle.g.cs
+C:\Users\Pidoux\source\repos\GeoLoom\GeoLoom\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\Pidoux\source\repos\GeoLoom\GeoLoom\obj\Debug\net8.0-windows\GeoLoom_MarkupCompile.cache
+C:\Users\Pidoux\source\repos\GeoLoom\GeoLoom\obj\Debug\net8.0-windows\GeoLoom_MarkupCompile.lref

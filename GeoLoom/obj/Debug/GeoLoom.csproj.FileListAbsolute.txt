@@ -1,0 +1,15 @@
+C:\Users\Pidoux\source\repos\GeoLoom\GeoLoom\obj\Debug\GeoLoom.csproj.AssemblyReference.cache
+C:\Users\Pidoux\source\repos\GeoLoom\GeoLoom\obj\Debug\App.g.cs
+C:\Users\Pidoux\source\repos\GeoLoom\GeoLoom\obj\Debug\GeoLoom_MarkupCompile.cache
+C:\Users\Pidoux\source\repos\GeoLoom\GeoLoom\bin\Debug\GeoLoom.exe.config
+C:\Users\Pidoux\source\repos\GeoLoom\GeoLoom\bin\Debug\GeoLoom.exe
+C:\Users\Pidoux\source\repos\GeoLoom\GeoLoom\bin\Debug\GeoLoom.pdb
+C:\Users\Pidoux\source\repos\GeoLoom\GeoLoom\obj\Debug\MainWindow.g.cs
+C:\Users\Pidoux\source\repos\GeoLoom\GeoLoom\obj\Debug\GeoLoom_MarkupCompile.lref
+C:\Users\Pidoux\source\repos\GeoLoom\GeoLoom\obj\Debug\MainWindow.baml
+C:\Users\Pidoux\source\repos\GeoLoom\GeoLoom\obj\Debug\GeoLoom.g.resources
+C:\Users\Pidoux\source\repos\GeoLoom\GeoLoom\obj\Debug\GeoLoom.Properties.Resources.resources
+C:\Users\Pidoux\source\repos\GeoLoom\GeoLoom\obj\Debug\GeoLoom.csproj.GenerateResource.cache
+C:\Users\Pidoux\source\repos\GeoLoom\GeoLoom\obj\Debug\GeoLoom.csproj.CoreCompileInputs.cache
+C:\Users\Pidoux\source\repos\GeoLoom\GeoLoom\obj\Debug\GeoLoom.exe
+C:\Users\Pidoux\source\repos\GeoLoom\GeoLoom\obj\Debug\GeoLoom.pdb
