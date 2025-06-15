@@ -41,18 +41,14 @@ jobs:
         echo "TO: ${{ secrets.SENDGRID_API_KEY != '' && 'OK' || '❌ MISSING' }}"
 
 
-    - name: Send email via HTTP SendGrid API
-      run: |
-        curl --request POST \
-          --url https://api.sendgrid.com/v3/mail/send \
-          --header "Authorization: Bearer ${{ secrets.SENDGRID_API_KEY }}" \
-          --header "Content-Type: application/json" \
-          --data '{
-            "personalizations": [{"to": [{"email": "gael.pidoux@ynov.com"}]}],
-            "from": {"email": "gael.pidoux@ynov.com"},
-            "subject": "✅ Build terminé avec succès",
-            "content": [{"type": "text/plain", "value": "Le pipeline CI/CD s’est terminé avec succès."}]
-          }'
+    - name: Send email via SendGrid (HTTP API)
+      shell: cmd
+      run: >
+        curl -X POST https://api.sendgrid.com/v3/mail/send
+        -H "Authorization: Bearer ${{ secrets.SENDGRID_API_KEY }}"
+        -H "Content-Type: application/json"
+        -d "{\"personalizations\":[{\"to\":[{\"email\":\"gael.pidoux@ynov.com\"}]}],\"from\":{\"email\":\"gael.pidoux@ynov.com\"},\"subject\":\"✅ Build terminé avec succès\",\"content\":[{\"type\":\"text/plain\",\"value\":\"Le pipeline CI/CD s’est terminé avec succès.\"}]}"
+
 
 
 
