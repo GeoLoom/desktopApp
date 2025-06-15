@@ -9,9 +9,8 @@ on:
 jobs:
   build:
     runs-on: windows-latest
-
- env:
-    DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+    env:
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
 
     steps:
     - name: Checkout code
@@ -36,7 +35,7 @@ jobs:
       with:
         name: wpf-build
         path: publish/
-        
+
     - name: Send email notification
       uses: dawidd6/action-send-mail@v3
       with:
@@ -44,8 +43,8 @@ jobs:
         server_port: 587
         username: apikey
         password: ${{ secrets.SENDGRID_API_KEY }}
-        subject: "Build finish avec succès"
+        subject: "✅ Build terminé avec succès"
         to: gael.pidoux@ynov.com
         from: ci@geoloom.dev
         body: |
-          Le pipeline CI/CD GeoLoom WPF s’est terminé avec succès.
+          Le pipeline CI/CD GeoLoom WPF s’est terminé avec succès. 🎉
