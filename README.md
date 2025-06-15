@@ -71,6 +71,9 @@ Voir rollback/restore.ps1 – restauration d'une version précédente du déploi
 À la fin du pipeline, une notification est envoyée par mail à l’équipe (via SendGrid).
 
 📸 Captures d’écran à fournir
+![Capture d’écran 2025-06-15 154726](https://github.com/user-attachments/assets/fc3fa349-a65a-4bf8-bbc6-12d230d6782a)
+![Capture d’écran 2025-06-15 154743](https://github.com/user-attachments/assets/c7c39cb1-d5fb-44ab-bf96-a198053b9c52)
+![Capture d’écran 2025-06-15 160525](https://github.com/user-attachments/assets/a7e92902-4188-48d0-922b-13b04bde2c7d)
 
 
 
