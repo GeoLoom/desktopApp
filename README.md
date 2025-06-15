@@ -100,6 +100,7 @@ Script disponible dans le dossier [`rollback/`](./rollback/) :
 ![Capture d’écran 2025-06-15 154743](https://github.com/user-attachments/assets/c3aebee8-73cc-4af2-862d-89c62dc8987c)
 ![Capture d’écran 2025-06-15 154726](https://github.com/user-attachments/assets/3cdfa388-05d4-44e0-990b-382d4a11587c)
 ![Capture d’écran 2025-06-15 160525](https://github.com/user-attachments/assets/e89290fa-c94e-497b-9a9a-fff31b593923)
+![Capture d’écran 2025-06-15 161530](https://github.com/user-attachments/assets/9782ab7e-6c01-4b24-8c38-78bbe1a83391)
 
 
 
