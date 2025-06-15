@@ -36,3 +36,16 @@ jobs:
       with:
         name: wpf-build
         path: publish/
+        
+    - name: Send email notification
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.sendgrid.net
+        server_port: 587
+        username: apikey
+        password: ${{ secrets.SENDGRID_API_KEY }}
+        subject: "Build finish avec succès"
+        to: gael.pidoux@ynov.com
+        from: ci@geoloom.dev
+        body: |
+          Le pipeline CI/CD GeoLoom WPF s’est terminé avec succès.
