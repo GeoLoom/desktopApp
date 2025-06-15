@@ -43,11 +43,12 @@ jobs:
       with:
         server_address: smtp.sendgrid.net
         server_port: 587
-        username: apikey  # <-- ceci est littéral, ne change pas
-        password: ${{ secrets.SENDGRID_API_KEY }}  # <-- clé secrète à ajouter dans GitHub
+        username: apikey
+        password: ${{ secrets.SENDGRID_API_KEY }}
         subject: "✅ Build terminé avec succès"
         to: gael.pidoux@ynov.com
         from: gael.pidoux@ynov.com
         body: |
           Le pipeline CI/CD GeoLoom WPF s’est terminé avec succès. 🎉
+
 
