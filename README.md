@@ -115,10 +115,7 @@ Script disponible dans le dossier [`rollback/`](./rollback/) :
 rollback/
 └── restore.ps1
 
-snapshots/
-└── Create-Snapshot.ps1
-
-src/
+MinimalApp/
 └── [Application WPF]
 
 README.md
