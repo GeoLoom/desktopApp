@@ -7,7 +7,7 @@ using GeoLoom.Model;
 
 namespace GeoLoom.Views
 {
-    public class ArticleViewModel : INotifyPropertyChanged
+    /*public class ArticleViewModel : INotifyPropertyChanged
     {
         public ObservableCollection<Article> Articles { get; set; }
         public Article EditingArticle { get; set; } = new Article();
@@ -103,5 +103,5 @@ namespace GeoLoom.Views
             add => CommandManager.RequerySuggested += value;
             remove => CommandManager.RequerySuggested -= value;
         }
-    }
+    } */
 }
