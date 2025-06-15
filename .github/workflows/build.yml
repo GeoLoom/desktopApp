@@ -23,13 +23,13 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore src/App.sln
+      run: dotnet restore desktopApp-feature_model/GeoLoom.sln
 
     - name: Build solution
-      run: dotnet build src/App.sln --configuration Release --no-restore
+      run: dotnet build desktopApp-feature_model/GeoLoom.sln
 
     - name: Publish app
-      run: dotnet publish src/App.sln --configuration Release --output publish
+      run: dotnet publish desktopApp-feature_model/GeoLoom.sln
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
