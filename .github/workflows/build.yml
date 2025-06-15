@@ -32,7 +32,7 @@ jobs:
       run: dotnet publish src/App.sln --configuration Release --output publish
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: wpf-build
         path: publish/
