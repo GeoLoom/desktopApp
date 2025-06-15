@@ -120,3 +120,24 @@ MinimalApp/
 └── [Application WPF]
 
 README.md
+
+
+--
+
+## ❌ Pourquoi Ansible et Snapshots ne sont pas implémentés
+
+### ❌ Ansible
+Ansible est principalement conçu pour la configuration automatisée de serveurs **Linux**, en utilisant **SSH**.  
+Dans le cadre de ce projet, l’infrastructure déployée avec Terraform repose sur une **machine virtuelle Windows**, car l’application WPF n’est compatible qu’avec Windows.  
+Configurer Windows avec Ansible nécessiterait des réglages avancés (WinRM, certificats, etc.), peu pertinents ici.  
+
+### ❌ Snapshots
+Les mécanismes de snapshots prévus dans le sujet s’appliquent à des bases de données ou des volumes persistants.  
+Dans ce projet, l’application WPF est **packagée et versionnée** via CI/CD, ce qui permet de restaurer une version stable sans snapshot système.  
+
+### 🟢 En résumé
+Les outils Ansible et snapshots ne sont pas utilisés ici **par cohérence technique**, mais leur rôle a été **remplacé par :
+- une machine Windows provisionnée avec Terraform
+- des scripts de restauration simples
+- et un versionnement propre dans Git**
+
