@@ -41,17 +41,18 @@ jobs:
         echo "TO: ${{ secrets.SENDGRID_API_KEY != '' && 'OK' || '❌ MISSING' }}"
 
 
-    - name: Send email notification
-      uses: dawidd6/action-send-mail@v3
-      with:
-        server_address: smtp.sendgrid.net
-        server_port: 587
-        username: apikey
-        password: ${{ secrets.SENDGRID_API_KEY }}
-        subject: "✅ Build terminé avec succès"
-        to: gael.pidoux@ynov.com
-        from: gael.p40@outlook.fr
-        body: |
-          Le pipeline CI/CD GeoLoom WPF s’est terminé avec succès. 🎉
+    - name: Send email via HTTP SendGrid API
+      run: |
+        curl --request POST \
+          --url https://api.sendgrid.com/v3/mail/send \
+          --header "Authorization: Bearer ${{ secrets.SENDGRID_API_KEY }}" \
+          --header "Content-Type: application/json" \
+          --data '{
+            "personalizations": [{"to": [{"email": "gael.pidoux@ynov.com"}]}],
+            "from": {"email": "gael.pidoux@ynov.com"},
+            "subject": "✅ Build terminé avec succès",
+            "content": [{"type": "text/plain", "value": "Le pipeline CI/CD s’est terminé avec succès."}]
+          }'
+
 
 
