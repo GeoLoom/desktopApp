@@ -36,7 +36,10 @@ jobs:
       with:
         name: wpf-build
         path: MinimalApp/publish/
-        
+    - name: Debug mail (output vars)
+      run: |
+        echo "TO: ${{ secrets.SENDGRID_API_KEY != '' && 'OK' || '❌ MISSING' }}"
+
 
     - name: Send email notification
       uses: dawidd6/action-send-mail@v3
