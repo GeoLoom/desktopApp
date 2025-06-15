@@ -29,7 +29,7 @@ jobs:
       run: dotnet build MinimalApp/MinimalApp.csproj
 
     - name: Publish app
-      run: dotnet publish GeoLoom.sln
+      run: dotnet publish MinimalApp/MinimalApp.csproj
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
