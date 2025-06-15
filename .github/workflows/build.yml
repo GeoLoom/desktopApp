@@ -26,26 +26,28 @@ jobs:
       run: dotnet restore GeoLoom.sln
 
     - name: Build solution
-      run: dotnet build MinimalApp/MinimalApp.csproj
+      run: dotnet build MinimalApp/MinimalApp.csproj --configuration Release
 
     - name: Publish app
-      run: dotnet publish MinimalApp/MinimalApp.csproj
+      run: dotnet publish MinimalApp/MinimalApp.csproj --configuration Release --output MinimalApp/publish
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
         name: wpf-build
-        path: publish/
+        path: MinimalApp/publish/
+        
 
     - name: Send email notification
       uses: dawidd6/action-send-mail@v3
       with:
         server_address: smtp.sendgrid.net
         server_port: 587
-        username: apikey
-        password: ${{ secrets.SENDGRID_API_KEY }}
+        username: apikey  # <-- ceci est littéral, ne change pas
+        password: ${{ secrets.SENDGRID_API_KEY }}  # <-- clé secrète à ajouter dans GitHub
         subject: "✅ Build terminé avec succès"
         to: gael.pidoux@ynov.com
-        from: ci@geoloom.dev
+        from: gael.pidoux@ynov.com
         body: |
           Le pipeline CI/CD GeoLoom WPF s’est terminé avec succès. 🎉
+
