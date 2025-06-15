@@ -1,79 +1,124 @@
-🔧 Contexte
+# 🎯 WPF Deployment Automation
 
-Application WPF pour projet pro  – déploiement automatisé avec GitHub Actions.
+Application **WPF (.NET 8)** pour projet professionnel avec **déploiement automatisé** via **GitHub Actions**.
 
-🧪 Technologies
+---
 
-WPF (.NET 8)
+## 🔧 Contexte
 
-GitHub Actions
+Ce projet vise à fournir une application WPF prête à être déployée automatiquement à l'aide d'une pipeline CI/CD complète.  
+L'accent est mis sur la fiabilité, la traçabilité (snapshots) et la facilité de rollback.
 
-GitFlow
+---
 
-PowerShell (rollback/snapshots)
+## 🧪 Technologies utilisées
 
-Terraform (infra)
+- **WPF** (.NET 8)
+- **GitHub Actions** – CI/CD automatisé
+- **GitFlow** – gestion des branches
+- **PowerShell** – snapshots, rollback
+- **Terraform** – infrastructure
+- **Ansible** – configuration des serveurs
 
-Ansible (config)
+---
 
-🌱 GitFlow
+## 🌱 GitFlow – Stratégie de branches
 
-Branches :
+| Branche      | Rôle                         |
+|--------------|------------------------------|
+| `main`       | Version stable               |
+| `develop`    | En cours de développement    |
+| `feature/*`  | Nouvelles fonctionnalités    |
+| `release/*`  | Préparations pour la release |
+| `hotfix/*`   | Corrections urgentes         |
 
-main : stable
+---
 
-develop : en dev
+## ⚙️ CI/CD – Pipeline GitHub Actions
 
-feature/* : ajouts
+### Fichier
+`.github/workflows/build.yml`
 
-release/* : préprod
+### Étapes principales
 
-hotfix/* : urgences
+- `dotnet build`
+- `dotnet publish`
+- Génération d’**artifacts**
+- **Notification e-mail** via **SendGrid HTTP API**
 
-⚙️ CI/CD
+### Déclencheurs
 
-Fichier .github/workflows/build.yml :
+- `push` ou `pull_request` sur les branches `main` ou `develop`
 
-dotnet build, publish, artifact
+---
 
-Notification email via SendGrid HTTP API
+## 🍿 Versionnement
 
-Trigger : push/pull sur main ou develop
+- Suivi via [SemVer](https://semver.org/lang/fr/) : `v1.0.0`, `v1.1.0`, etc.
+- Utilisation de **Git tags**
+- **Artifacts** associés à chaque release via GitHub
 
-🍿 Versionnement
+---
 
-SemVer (v1.0.0, v1.1.0, …)
+## 🔐 Secrets
 
-Git tags
+Utilisation de **GitHub Secrets** pour sécuriser :
 
-Artifacts en release GitHub
+- Clés d’API (ex. SendGrid)
 
-🔐 Secrets
+- Test d'une variable psw
 
-Utilisation de GitHub Secrets pour :
+---
 
-Mots de passe (DB, etc.)
+## 💾 Snapshots – Sauvegardes automatisées
 
-API KEY SendGrid
+Scripts PowerShell disponibles dans le dossier [`snapshots/`](./snapshots/) :
 
-💾 Snapshots
+- Exemple : `Create-Snapshot.ps1`  
+  → Capture l’état actuel avant chaque déploiement
 
-Scripts PowerShell dans snapshots/ pour backup automatique
+---
 
-Exemple : Create-Snapshot.ps1
+## 🔄 Rollback – Restauration d’état
 
-🔄 Rollback
+Script disponible dans le dossier [`rollback/`](./rollback/) :
 
-Voir rollback/restore.ps1 – restauration d'une version précédente du déploiement
+- `restore.ps1`  
+  → Restaure une version précédente du déploiement à l’aide d’un snapshot
 
-📢 Notification
+---
 
-À la fin du pipeline, une notification est envoyée par mail à l’équipe (via SendGrid).
+## 📢 Notifications de fin de pipeline
 
-📸 Captures d’écran à fournir
-![Capture d’écran 2025-06-15 154726](https://github.com/user-attachments/assets/fc3fa349-a65a-4bf8-bbc6-12d230d6782a)
-![Capture d’écran 2025-06-15 154743](https://github.com/user-attachments/assets/c7c39cb1-d5fb-44ab-bf96-a198053b9c52)
-![Capture d’écran 2025-06-15 160525](https://github.com/user-attachments/assets/a7e92902-4188-48d0-922b-13b04bde2c7d)
+À la fin du processus CI/CD :
+
+- Envoi d’un **e-mail automatique à l’équipe** via **SendGrid**
+
+---
+
+## 📸 Captures d’écran
+![Capture d’écran 2025-06-15 154743](https://github.com/user-attachments/assets/c3aebee8-73cc-4af2-862d-89c62dc8987c)
+![Capture d’écran 2025-06-15 154726](https://github.com/user-attachments/assets/3cdfa388-05d4-44e0-990b-382d4a11587c)
+![Capture d’écran 2025-06-15 160525](https://github.com/user-attachments/assets/e89290fa-c94e-497b-9a9a-fff31b593923)
 
 
 
+---
+
+## 📁 Structure recommandée
+
+```plaintext
+.github/
+└── workflows/
+    └── build.yml
+
+rollback/
+└── restore.ps1
+
+snapshots/
+└── Create-Snapshot.ps1
+
+src/
+└── [Application WPF]
+
+README.md
