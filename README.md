@@ -32,12 +32,16 @@ Fichier `.github/workflows/build.yml` :
 ## 🔐 Secrets
 Utilisation de GitHub Secrets pour :
 - Mots de passe
+- API KEY
 
 ## 💾 Snapshots
 Scripts PowerShell dans `snapshots/` pour backup automatique
 
 ## 🔁 Rollback
 Voir `rollback/restore.ps1` – restauration d'une version précédente
+
+## Notification
+À la fin du pipeline, une notification est envoyée par mail à l’équipe.
 
 ## 📸 Captures d’écran à fournir
 
